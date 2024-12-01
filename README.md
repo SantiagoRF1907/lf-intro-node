@@ -16,11 +16,14 @@ The expected output should be fnm 1.33.1.
 If, upon restarting the terminal, you encounter a "Command 'fnm' not found"  
 `$ export PATH="$HOME/.local/share/fnm:$PATH"`
 
-With the version manager successfully installed, let's proceed to install the specific Node version for this course.  
+With the version manager successfully installed, let's proceed to install the latest Long Term Support (lts) Node version.  
 `$ fnm install --lts`
 
-This command will install the lates long term support version of Node.  
-The version used for this course is v18.16.0
+For this course we will require v18.16.0.  
+` $ fnm install 18.16.0 `
+
+Then:
+` $ fnm use 18.16.0 `
 
 To verify that Node is installed and check its version, use the following command:  
 `node -v`
@@ -50,3 +53,18 @@ Then use the following command to start the file server:
 ![terminal expected output](/images/server-running.png)
 
 Now, you can open your browser and navigate to http://localhost:5050. You should see the web page with the Fetch Products button.
+
+## Creating NPM Shell Commands
+
+We can aliviate the burden of frequently using shell commands by creating custom NPM shell commands. This commands are defined within the package.json file, specifically under the "scripts" object like so:
+
+`"scripts": {
+    "static": "serve -p 5050 static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },`
+
+Once you've defined your commands you can execute the commands in the terminal.
+
+`$ npm run static`
+
+## Mocking a Web Service
