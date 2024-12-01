@@ -1,4 +1,4 @@
-const mockData = [
+const productsData = [
   {
     id: "A1",
     name: "Vacuum Cleaner",
@@ -21,7 +21,7 @@ const mockData = [
 const populateProducts = () => {
   const products = document.querySelector("#products");
   products.innerHTML = "";
-  for (const product of mockData) {
+  for (const product of productsData) {
     const item = document.createElement("product-item");
     for (const key of ["name", "rrp", "info"]) {
       const span = document.createElement("span");

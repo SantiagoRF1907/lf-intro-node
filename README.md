@@ -37,3 +37,16 @@ To verify that Node is installed and check its version, use the following comman
 Once you have created the .nvmrc file with the desired Node version, you can use the following command to install and set that specific Node version for your project:
 
 `$ fnm use --version-file-strategy local`
+
+## Quick File Server
+
+Navigate to the directory that contains the static folder within the terminal.
+`santi@LAPTOP-RBEKK8IP MINGW64 ~/OneDrive/Escritorio/Coding/lf-intro-node/static (main)
+$ cd '../'`
+
+Then use the following command to start the file server:  
+`$ npx serve -p 5050 static`
+
+![terminal expected output](/images/server-running.png)
+
+Now, you can open your browser and navigate to http://localhost:5050. You should see the web page with the Fetch Products button.
